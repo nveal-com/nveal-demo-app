@@ -13,9 +13,7 @@
     }
 </script>
 
-<svelte:head>
-    <!-- TODO: Add Nveal SDK Key Here -->
-</svelte:head>
+
 
 <header class="bg-white/80 backdrop-blur-md border-b border-gray-100 text-gray-900 sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
