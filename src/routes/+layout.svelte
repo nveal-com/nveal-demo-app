@@ -2,7 +2,8 @@
     import Header from "$lib/components/Header.svelte";
     import Footer from "$lib/components/Footer.svelte";
     import "../app.css";
-    import { NvealRecorder } from "@nveal/browser";
+    import { onMount } from "svelte";
+    import { init } from "@nveal/browser";
 
     let { children } = $props();
 
@@ -19,13 +20,16 @@
      * Step 2: Initialize and add SDK key
      * Uncomment the code below to import and initialize the SDK.
      */
-    $effect(() => {
-        Nveal.init({
-            apiKey: "7ff5365a-a9ab-42a4-9d64-6e783a3d68b4",
+    onMount(() => {
+        init({
+            //apiKey: "7ff5365a-a9ab-42a4-9d64-6e783a3d68b4",
+            apiBaseUrl: "http://localhost:4000",
+            apiKey: "8db6fda3-df4e-412c-a3a1-110de436a555",
             //Add Any metadata you like
             metadata: {
                 //Add any values which you want to track Ex: User Id, customer name etc.
-                environement: "production",
+                //environement: "production",
+                environement: "local",
             },
             //Add nay maskings you like
             maskAllInputs: false, //This is true by default
@@ -45,7 +49,7 @@
                 level: ["log", "error", "warn", "info"],
                 maxConsolePayloadBytes: 8 * 1024 * 1024, // 8MB limit
             },
-        });
+        }).catch((err) => console.error("[Nveal] Init failed:", err));
     });
     /*
      *  Step 3: Add different configurations for SDK
