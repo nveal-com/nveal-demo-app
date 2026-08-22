@@ -36,8 +36,8 @@
             <div class="lg:w-2/3 flex flex-col gap-4">
                 {#each $cart as item (item.id)}
                     <div class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                        <div class="w-24 h-24 flex-shrink-0 bg-gray-50 rounded-xl overflow-hidden">
-                            <img src={item.images[0]} alt={item.title} class="w-full h-full object-cover" />
+                        <div class="w-24 h-24 flex-shrink-0 bg-gray-50 rounded-xl overflow-hidden p-2">
+                            <img src={item.image} alt={item.title} class="w-full h-full object-contain" />
                         </div>
                         <div class="flex-grow flex flex-col justify-between">
                             <div>

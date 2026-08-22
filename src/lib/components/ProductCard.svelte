@@ -25,13 +25,13 @@
 <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col h-full border border-gray-100">
     <div class="relative aspect-square overflow-hidden bg-gray-50">
         <img 
-            src={product.images[0] || fallbackImage} 
+            src={product.image || fallbackImage} 
             alt={product.title}
             onerror={handleImageError}
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
         />
-        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-700 shadow-sm">
-            {product.category.name}
+        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-700 shadow-sm capitalize">
+            {product.category}
         </div>
     </div>
     

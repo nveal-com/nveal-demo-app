@@ -17,8 +17,8 @@
 {#if data.categories?.length > 0}
     <div class="flex flex-wrap justify-center gap-3 mb-10">
         {#each data.categories as category}
-            <div class="px-5 py-2 bg-white rounded-full shadow-sm border border-gray-100 text-sm font-medium text-gray-700 hover:border-blue-300 hover:text-blue-600 cursor-pointer transition-colors">
-                {category.name}
+            <div class="px-5 py-2 bg-white rounded-full shadow-sm border border-gray-100 text-sm font-medium text-gray-700 hover:border-blue-300 hover:text-blue-600 cursor-pointer transition-colors capitalize">
+                {category}
             </div>
         {/each}
     </div>

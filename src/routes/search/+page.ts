@@ -11,7 +11,7 @@ export const load: PageLoad = async ({ url, fetch }) => {
         };
     }
     
-    const res = await fetch(`https://api.escuelajs.co/api/v1/products/?title=${encodeURIComponent(q)}`);
+    const res = await fetch(`https://fakestoreapi.com/products`);
     
     if (!res.ok) {
         return {
@@ -20,7 +20,8 @@ export const load: PageLoad = async ({ url, fetch }) => {
         };
     }
     
-    const products: Product[] = await res.json();
+    const allProducts: Product[] = await res.json();
+    const products = allProducts.filter(p => p.title.toLowerCase().includes(q.toLowerCase()));
     return {
         products,
         q
