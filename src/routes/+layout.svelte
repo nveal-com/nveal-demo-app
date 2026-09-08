@@ -33,8 +33,10 @@
             },
             //Add nay maskings you like
             maskAllInputs: false, //This is true by default
+            maskAllText: false,
             maskPII: false, //This is true by default
             //OPTIONAL IF YOU WANT TO RECORD NETWORK CALLS. NOTE: ONLY URLS are recorded and not payload or response for security purposes.
+            ignoreSelector: "#firstName, #lastName",
             network: {
                 record: true,
                 // Drop noisy health checks completely
